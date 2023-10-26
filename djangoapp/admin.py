@@ -3,4 +3,6 @@ from .models import Candidate,Education
 
 # Register your models here.
 admin.site.register(Candidate)
-admin.site.register(Education)
+class educationAdmin(admin.ModelAdmin):
+    list_display=('id','course','university','year','reg_id')
+admin.site.register(Education,educationAdmin)
